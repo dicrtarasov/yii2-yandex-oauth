@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 02:23:45
+ * @version 01.04.21 03:01:23
  */
 
 declare(strict_types = 1);
@@ -99,16 +99,16 @@ class CodeRequest extends JsonEntity
      */
     public $state;
 
-    /** @var OauthClient */
+    /** @var OAuthClient */
     private $client;
 
     /**
      * CodeRequest constructor.
      *
-     * @param OauthClient $client
+     * @param OAuthClient $client
      * @param array $config
      */
-    public function __construct(OauthClient $client, $config = [])
+    public function __construct(OAuthClient $client, $config = [])
     {
         $this->client = $client;
 
@@ -177,6 +177,6 @@ class CodeRequest extends JsonEntity
             throw new ValidateException($this);
         }
 
-        return OauthClient::URL_BASE . '?' . http_build_query($this->json);
+        return OAuthClient::URL_BASE . '?' . http_build_query($this->json);
     }
 }

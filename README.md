@@ -11,7 +11,7 @@ https://yandex.ru/dev/oauth/doc/dg/tasks/get-oauth-token.html
 $config = [
     'components' => [
         'yandex-oauth' => [
-            'class' => dicr\yandex\oauth\OauthClient::class,
+            'class' => dicr\yandex\oauth\OAuthClient::class,
             'clientId' => 'ИД приложения',
         ]
     ]
@@ -21,7 +21,7 @@ $config = [
 ## Использование
 
 ```php
-/** @var dicr\yandex\oauth\OauthClient $oauth */
+/** @var dicr\yandex\oauth\OAuthClient $oauth */
 $oauth = Yii::$app->get('yandex-oauth'); 
 
 /** @var dicr\yandex\oauth\CodeRequest $req запрос кода авторизации */

@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 02:12:55
+ * @version 01.04.21 03:01:23
  */
 
 declare(strict_types = 1);
@@ -29,16 +29,16 @@ class RevokeRequest extends JsonEntity
     /** @var ?string Пароль приложения. Доступен в свойствах приложения */
     public $clientSecret;
 
-    /** @var OauthClient */
+    /** @var OAuthClient */
     private $client;
 
     /**
      * RevokeRequest constructor.
      *
-     * @param OauthClient $client
+     * @param OAuthClient $client
      * @param array $config
      */
-    public function __construct(OauthClient $client, $config = [])
+    public function __construct(OAuthClient $client, $config = [])
     {
         $this->client = $client;
 

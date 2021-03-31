@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 02:17:29
+ * @version 01.04.21 03:01:36
  */
 
 declare(strict_types = 1);
@@ -21,11 +21,11 @@ use function is_array;
 use const CURLOPT_ENCODING;
 
 /**
- * OAuth клиент.
+ * Яндекс.OAuth клиент.
  *
  * @link https://yandex.ru/dev/oauth/doc/dg/concepts/about.html
  */
-class OauthClient extends Component
+class OAuthClient extends Component
 {
     /** @var string базовый URL */
     public const URL_BASE = 'https://oauth.yandex.ru';

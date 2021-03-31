@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 02:08:43
+ * @version 01.04.21 03:01:23
  */
 
 declare(strict_types = 1);
@@ -77,16 +77,16 @@ class TokenRequest extends JsonEntity
      */
     public $deviceName;
 
-    /** @var OauthClient */
+    /** @var OAuthClient */
     private $client;
 
     /**
      * CodeRequest constructor.
      *
-     * @param OauthClient $client
+     * @param OAuthClient $client
      * @param array $config
      */
-    public function __construct(OauthClient $client, $config = [])
+    public function __construct(OAuthClient $client, $config = [])
     {
         $this->client = $client;
 
