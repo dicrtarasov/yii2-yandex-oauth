@@ -3,13 +3,12 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 03:01:36
+ * @version 01.04.21 04:50:19
  */
 
 declare(strict_types = 1);
 namespace dicr\yandex\oauth;
 
-use Yii;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\di\Instance;
@@ -30,10 +29,10 @@ class OAuthClient extends Component
     /** @var string базовый URL */
     public const URL_BASE = 'https://oauth.yandex.ru';
 
-    /** @var ?string идентификатор зарегистрированного приложения */
+    /** @var string идентификатор зарегистрированного приложения */
     public $clientId;
 
-    /** @var ?string Пароль приложения. Доступен в свойствах приложения */
+    /** @var string Пароль приложения. Доступен в свойствах приложения */
     public $clientSecret;
 
     /**
@@ -61,6 +60,14 @@ class OAuthClient extends Component
     {
         parent::init();
 
+        if (empty($this->clientId)) {
+            throw new InvalidConfigException('clientId');
+        }
+
+        if (empty($this->clientSecret)) {
+            throw new InvalidConfigException('clientSecret');
+        }
+
         $this->deviceId = trim((string)$this->deviceId) ?: null;
         $this->deviceName = trim((string)$this->deviceName) ?: null;
 
@@ -81,23 +88,6 @@ class OAuthClient extends Component
         }
 
         $this->httpClient = Instance::ensure($this->httpClient, Client::class);
-    }
-
-    /**
-     * Сохраняет/возвращает сохраненный адрес клиента в сессии.
-     *
-     * @param array|string|null $url если задан, то сохраняется.
-     * @return array|string|null
-     */
-    public static function clientUrl($url = null)
-    {
-        $data = Yii::$app->session->get(__CLASS__, []);
-        if ($url !== null) {
-            $data['clientUrl'] = $url;
-            Yii::$app->session->set(__CLASS__, $data);
-        }
-
-        return $data['clientUrl'] ?? null;
     }
 
     /**

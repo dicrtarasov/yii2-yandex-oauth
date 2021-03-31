@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 04:38:14
+ * @version 01.04.21 04:51:24
  */
 
 declare(strict_types = 1);
@@ -56,10 +56,10 @@ class TokenRequest extends JsonEntity
      */
     public $refreshToken;
 
-    /** @var ?string Идентификатор приложения. Доступен в свойствах приложения */
+    /** @var string Идентификатор приложения. Доступен в свойствах приложения */
     public $clientId;
 
-    /** @var ?string Пароль приложения. Доступен в свойствах приложения */
+    /** @var string Пароль приложения. Доступен в свойствах приложения */
     public $clientSecret;
 
     /**
@@ -112,9 +112,11 @@ class TokenRequest extends JsonEntity
 
             ['clientId', 'trim'],
             ['clientId', 'default', 'value' => $this->client->clientId],
+            ['clientId', 'required'],
 
             ['clientSecret', 'trim'],
             ['clientSecret', 'default', 'value' => $this->client->clientSecret],
+            ['clientSecret', 'required'],
 
             ['deviceId', 'trim'],
             ['deviceId', 'default', 'value' => $this->client->deviceId],
