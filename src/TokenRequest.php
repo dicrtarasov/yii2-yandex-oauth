@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 03:01:23
+ * @version 01.04.21 04:38:14
  */
 
 declare(strict_types = 1);
@@ -104,11 +104,11 @@ class TokenRequest extends JsonEntity
 
             ['code', 'trim'],
             ['code', 'default'],
-            ['code', 'required', 'when' => static fn() => $this->grantType === self::GRANT_TYPE_AUTHORIZATION_CODE],
+            ['code', 'required', 'when' => fn() => $this->grantType === self::GRANT_TYPE_AUTHORIZATION_CODE],
 
             ['refreshToken', 'trim'],
             ['refreshToken', 'default'],
-            ['refreshToken', 'required', 'when' => static fn() => $this->grantType === self::GRANT_TYPE_REFRESH_TOKEN],
+            ['refreshToken', 'required', 'when' => fn() => $this->grantType === self::GRANT_TYPE_REFRESH_TOKEN],
 
             ['clientId', 'trim'],
             ['clientId', 'default', 'value' => $this->client->clientId],
