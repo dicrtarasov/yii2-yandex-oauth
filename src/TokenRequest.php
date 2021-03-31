@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 04:51:24
+ * @version 01.04.21 04:58:47
  */
 
 declare(strict_types = 1);
@@ -150,12 +150,8 @@ class TokenRequest extends JsonEntity
         $res->format = Client::FORMAT_JSON;
         Log::debug('Ответ: ' . $res->toString());
 
-        if (! $res->isOk) {
-            throw new Exception('HTTP-error: ' . $res->statusCode);
-        }
-
-        if (empty($res->data['access_token'])) {
-            throw new Exception($res->data['error_description'] ?? 'Не получен токен доступа');
+        if (! $res->isOk || empty($res->data['access_token'])) {
+            throw new Exception($res->data['error_description'] ?? 'HTTP-error: ' . $res->statusCode);
         }
 
         return new Token([
