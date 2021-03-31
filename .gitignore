@@ -1,0 +1,5 @@
+/vendor/
+/runtime/
+.phpunit.result.cache
+/tests/local.php
+
