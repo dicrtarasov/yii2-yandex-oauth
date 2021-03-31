@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 03:01:23
+ * @version 01.04.21 04:35:05
  */
 
 declare(strict_types = 1);
@@ -177,6 +177,6 @@ class CodeRequest extends JsonEntity
             throw new ValidateException($this);
         }
 
-        return OAuthClient::URL_BASE . '?' . http_build_query($this->json);
+        return OAuthClient::URL_BASE . '/authorize?' . http_build_query($this->json);
     }
 }
