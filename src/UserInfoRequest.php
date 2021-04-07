@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 07.04.21 06:04:50
+ * @version 08.04.21 01:15:27
  */
 
 declare(strict_types = 1);
@@ -13,7 +13,7 @@ use dicr\helper\Log;
 use dicr\json\JsonEntity;
 use dicr\validate\ValidateException;
 use dicr\yandex\oauth\entity\UserInfo;
-use Exception;
+use yii\base\Exception;
 use yii\httpclient\Client;
 
 /**
