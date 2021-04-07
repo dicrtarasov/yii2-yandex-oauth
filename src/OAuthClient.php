@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 04:50:19
+ * @version 07.04.21 23:21:00
  */
 
 declare(strict_types = 1);
@@ -121,5 +121,16 @@ class OAuthClient extends Component
     public function revokeRequest(array $config = []): RevokeRequest
     {
         return new RevokeRequest($this, $config);
+    }
+
+    /**
+     * Запрос информации о пользователе.
+     *
+     * @param array $config
+     * @return UserInfoRequest
+     */
+    public function userInfoRequest(array $config = []): UserInfoRequest
+    {
+        return new UserInfoRequest($this, $config);
     }
 }
