@@ -27,7 +27,7 @@ $config = [
 $oauth = Yii::$app->get('yandex-oauth'); 
 
 /** @var dicr\yandex\oauth\AuthorizeRequest $req запрос кода авторизации */
-$req = $oauth->codeRequest();
+$req = $oauth->authRequest();
 
 /** @var string $oauthUrl адрес для переадресации клиента */
 $oauthUrl = $req->oauthUrl();

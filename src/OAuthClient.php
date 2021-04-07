@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 08.04.21 02:54:57
+ * @version 08.04.21 04:10:30
  */
 
 declare(strict_types = 1);
@@ -96,7 +96,7 @@ class OAuthClient extends Component
      * @param array $config
      * @return AuthorizeRequest
      */
-    public function codeRequest(array $config = []): AuthorizeRequest
+    public function authRequest(array $config = []): AuthorizeRequest
     {
         return new AuthorizeRequest($this, $config);
     }
