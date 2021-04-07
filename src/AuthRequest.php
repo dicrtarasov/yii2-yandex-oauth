@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 08.04.21 02:57:16
+ * @version 08.04.21 04:18:09
  */
 
 declare(strict_types = 1);
@@ -21,7 +21,7 @@ use function implode;
  *
  * @link https://yandex.ru/dev/oauth/doc/dg/reference/auto-code-client.html
  */
-class AuthorizeRequest extends JsonEntity
+class AuthRequest extends JsonEntity
 {
     /**
      * @var string запрос кода для обмена на токен
@@ -183,7 +183,7 @@ class AuthorizeRequest extends JsonEntity
      * @return string
      * @throws ValidateException
      */
-    public function oauthUrl(): string
+    public function url(): string
     {
         if (! $this->validate()) {
             throw new ValidateException($this);

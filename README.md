@@ -26,11 +26,11 @@ $config = [
 /** @var dicr\yandex\oauth\OAuthClient $oauth */
 $oauth = Yii::$app->get('yandex-oauth'); 
 
-/** @var dicr\yandex\oauth\AuthorizeRequest $req запрос кода авторизации */
+/** @var dicr\yandex\oauth\AuthRequest $req запрос кода авторизации */
 $req = $oauth->authRequest();
 
 /** @var string $oauthUrl адрес для переадресации клиента */
-$oauthUrl = $req->oauthUrl();
+$oauthUrl = $req->url();
 
 // переадресация клиента на Яндекс.OAuth
 Yii::$app->end(0, Yii::$app->response->redirect($oauthUrl));
