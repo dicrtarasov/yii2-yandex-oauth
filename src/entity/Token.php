@@ -3,11 +3,11 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 01:18:00
+ * @version 07.04.21 05:12:57
  */
 
 declare(strict_types = 1);
-namespace dicr\yandex\oauth;
+namespace dicr\yandex\oauth\entity;
 
 use dicr\json\JsonEntity;
 
