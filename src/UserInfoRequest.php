@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 08.04.21 01:15:27
+ * @version 08.04.21 02:54:57
  */
 
 declare(strict_types = 1);
@@ -33,7 +33,7 @@ class UserInfoRequest extends JsonEntity
     private $client;
 
     /**
-     * CodeRequest constructor.
+     * AuthorizeRequest constructor.
      *
      * @param OAuthClient $client
      * @param array $config

@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.04.21 04:35:05
+ * @version 08.04.21 02:57:16
  */
 
 declare(strict_types = 1);
@@ -21,14 +21,26 @@ use function implode;
  *
  * @link https://yandex.ru/dev/oauth/doc/dg/reference/auto-code-client.html
  */
-class CodeRequest extends JsonEntity
+class AuthorizeRequest extends JsonEntity
 {
-    /** @var string запрос кода */
+    /**
+     * @var string запрос кода для обмена на токен
+     * После авторизации переадресуется на callbackUrl с кодом в параметре GET
+     * https://yandex.ru/dev/oauth/doc/dg/reference/auto-code-client.html
+     */
     public const RESPONSE_TYPE_CODE = 'code';
+
+    /**
+     * @var string запрос токена
+     * После авторизации переадресуется на callbackUrl с токеном в хэш-теге адреса ('#'). Подходит для javascript.
+     * https://yandex.ru/dev/oauth/doc/dg/reference/web-client.html
+     */
+    public const RESPONSE_TYPE_TOKEN = 'token';
 
     /** @var string[] типы запросов */
     public const RESPONSE_TYPE = [
-        self::RESPONSE_TYPE_CODE
+        self::RESPONSE_TYPE_CODE,
+        self::RESPONSE_TYPE_TOKEN
     ];
 
     /**
@@ -103,7 +115,7 @@ class CodeRequest extends JsonEntity
     private $client;
 
     /**
-     * CodeRequest constructor.
+     * AuthorizeRequest constructor.
      *
      * @param OAuthClient $client
      * @param array $config

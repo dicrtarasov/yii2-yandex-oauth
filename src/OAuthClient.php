@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 07.04.21 23:21:00
+ * @version 08.04.21 02:54:57
  */
 
 declare(strict_types = 1);
@@ -94,11 +94,11 @@ class OAuthClient extends Component
      * Создает запрос на получения кода авторизации.
      *
      * @param array $config
-     * @return CodeRequest
+     * @return AuthorizeRequest
      */
-    public function codeRequest(array $config = []): CodeRequest
+    public function codeRequest(array $config = []): AuthorizeRequest
     {
-        return new CodeRequest($this, $config);
+        return new AuthorizeRequest($this, $config);
     }
 
     /**
