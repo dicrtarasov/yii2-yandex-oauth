@@ -5,6 +5,7 @@
     "homepage": "https://gitlab.com/dicr/yii2-yandex-oauth",
     "description": "Яндекс OAuth клиент для Yii2",
     "keywords": ["dicr", "yii2", "yandex", "oauth", "api", "client"],
+
     "authors": [
         {
             "name": "Igor Tarasov",
@@ -13,9 +14,11 @@
             "role": "developer"
         }
     ],
+
     "support": {
         "source": "https://gitlab.com/dicr/yii2-yandex-oauth.git"
     },
+
     "minimum-stability": "RC",
     "prefer-stable": true,
     "require": {
@@ -29,18 +32,21 @@
         "dicr/yii2-json": "~2.0",
         "dicr/yii2-validate": "~2.3"
     },
+
     "autoload": {
         "psr-4": {
             "dicr\\yandex\\oauth\\": "src/"
         }
     },
+
     "repositories": [
+        {"type": "composer", "url": "https://asset-packagist.org"},
         {"type": "gitlab", "url": "https://gitlab.com/dicr/yii2-helper.git"},
         {"type": "gitlab", "url": "https://gitlab.com/dicr/yii2-http.git"},
         {"type": "gitlab", "url": "https://gitlab.com/dicr/yii2-json.git"},
-        {"type": "gitlab", "url": "https://gitlab.com/dicr/yii2-validate.git"},
-        {"type": "composer", "url": "https://asset-packagist.org"}
+        {"type": "gitlab", "url": "https://gitlab.com/dicr/yii2-validate.git"}
     ],
+
     "require-dev": {
         "roave/security-advisories": "dev-latest"
     }
